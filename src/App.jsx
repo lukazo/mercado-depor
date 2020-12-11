@@ -1,10 +1,12 @@
 import './styles/app.css';
-import NavBar from './components/home/NavBar';
+import NavBar from './components/Header/NavBar/NavBar';
+import Featured from './components/Home/Featured/Featured';
 
 function App() {
   return (
     <>
       <NavBar />
+      <Featured />
     </>
   );
 }
