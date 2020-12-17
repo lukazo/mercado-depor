@@ -1,4 +1,5 @@
 import ItemCard from '../../../components/ItemCard/ItemCard';
+import './Featured.css';
 
 const Featured = () => {
     return (

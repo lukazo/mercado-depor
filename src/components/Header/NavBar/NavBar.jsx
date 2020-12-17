@@ -1,8 +1,9 @@
-import CartWidget from '../CartWidget/CartWidget';
+import CartWidget from '../CartWidgetIcon/CartWidgetIcon';
+import './NavBar.css';
 
 function NavBar() {
     return (
-        <>
+        <header>
             <h1>Waffle House</h1>
             <nav>
                 <ul>
@@ -13,7 +14,7 @@ function NavBar() {
                     <li><CartWidget /></li>
                 </ul>
             </nav>
-        </>
+        </header>
     );
 }
 

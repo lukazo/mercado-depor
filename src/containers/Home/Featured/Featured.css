@@ -1,0 +1,10 @@
+
+.productosDestacados {
+    width: 90%;
+    margin: 0 auto;
+}
+.productosDestacados ul li {
+    width: 20%;
+    text-align: center;
+    margin: 0 auto;
+}
