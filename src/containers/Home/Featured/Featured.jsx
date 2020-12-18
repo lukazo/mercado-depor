@@ -1,16 +1,79 @@
+import { useState, useEffect } from 'react';
 import ItemCard from '../../../components/ItemCard/ItemCard';
 import './Featured.css';
 
 const Featured = () => {
+
+    const [itemList, setItemList] = useState([]);
+
+    const products = [
+        {
+            id: 1,
+            nombre: 'Sweet dreams',
+            description: 'Waffles con ...',
+            precio: '300',
+        },
+        {
+            id: 2,
+            nombre: 'Tropical breeze',
+            description: 'Waffles con ...',
+            precio: '200',
+        },
+        {
+            id: 1,
+            nombre: 'Grooving spark',
+            description: 'Waffles con ...',
+            precio: '400',
+        },
+        {
+            id: 1,
+            nombre: 'Morning blast',
+            description: 'Waffles con ...',
+            precio: '100',
+        },
+    ]
+
+    const getItems = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products)
+        }, 5000)
+    });
+
+    const getItemsDB = async () => {
+        try {
+            const productList = await getItems;
+            setItemList(productList)
+        } catch (error) {
+            alert('No podemos mostrar productos')
+        }
+    }
+
+    useEffect(() => {
+        getItemsDB();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+
     return (
         <section className="productosDestacados">
             <h1>Productos destacdos</h1>
-            <ul>
-                <li><ItemCard titulo="Producto 1" precio="200" /></li>
-                <li><ItemCard titulo="Producto 2" precio="400" /></li>
-                <li><ItemCard titulo="Producto 3" precio="500" /></li>
-                <li><ItemCard titulo="Producto 4" precio="100" /></li>
-            </ul>
+            {
+                itemList.length ?
+                    <ul>
+                        {
+                            itemList.map((item) => (
+                                <li key={item.id}>
+                                    <ItemCard
+                                        nombre={item.nombre}
+                                        description={item.description}
+                                        precio={item.precio}
+                                    />
+                                </li>
+                            ))
+                        }
+                    </ul>
+                    : <p>Cargando Waffles...</p>
+            }
         </section>
     );
 }

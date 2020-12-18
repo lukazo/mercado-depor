@@ -1,33 +1,16 @@
-import {useState} from 'react';
+import ItemCount from '../ItemCount/ItemCount';
 import './ItemCard.css';
 
-const ItemCard = ({titulo, precio}) => {
-
-    const [qtyProd, setQtyProd] = useState(0);
-    
-    const restaQtyProd = () => {
-        if(qtyProd) {
-            setQtyProd(qtyProd - 1);
-        }
-    }
-
+const ItemCard = ({nombre, precio, description}) => {
     return (
         <article className="itemCard">
             <img src="https://placehold.it/250X200" alt="Producto de prueba"/>
             <div className="container-producto">
-                <h3>{titulo}</h3>
-                <div className="qtyProd">
-                    <button 
-                        onClick={restaQtyProd}
-                        disabled={!qtyProd ? 'disabled' : null}    
-                    >
-                        -
-                    </button>
-                    <input type="text" value={qtyProd} readOnly/>
-                    <button onClick={() => setQtyProd(qtyProd + 1)}>+</button>
-                </div>
+                <h3>{nombre}</h3>
+                <p>{description}</p>
+                <ItemCount />
                 <p>${precio}</p>
-            </div>
+            </div> 
         </article>
     );
 }
