@@ -29,7 +29,7 @@ function NavBar() {
     const getLinks = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(navLink)
-        }, 400)
+        }, 1000)
     })
 
     const getLinksDB = async () => {

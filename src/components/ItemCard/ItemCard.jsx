@@ -1,3 +1,4 @@
+import Detail from '../Detail';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemCard.css';
 
@@ -11,6 +12,8 @@ const ItemCard = ({nombre, precio, description}) => {
                 <ItemCount />
                 <p>${precio}</p>
             </div> 
+            <button  >Ver Detalle</button>
+            <Detail nombre={nombre} precio={precio} description={description} /> 
         </article>
     );
 }

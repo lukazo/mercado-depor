@@ -20,13 +20,13 @@ const Featured = () => {
             precio: '200',
         },
         {
-            id: 1,
+            id: 3,
             nombre: 'Grooving spark',
             description: 'Waffles con ...',
             precio: '400',
         },
         {
-            id: 1,
+            id: 4,
             nombre: 'Morning blast',
             description: 'Waffles con ...',
             precio: '100',
@@ -36,9 +36,9 @@ const Featured = () => {
     const getItems = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products)
-        }, 5000)
+        }, 3500)
     });
-
+    
     const getItemsDB = async () => {
         try {
             const productList = await getItems;
