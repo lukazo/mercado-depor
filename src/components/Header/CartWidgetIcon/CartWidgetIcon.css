@@ -1,3 +1,4 @@
 .cartWidgetIcon {
     cursor: pointer;
+    color: var(--white);
 }

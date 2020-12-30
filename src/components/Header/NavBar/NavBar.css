@@ -1,12 +1,58 @@
-ul {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    padding: 10px 0 0 0;
-    justify-content: center;
-  }
-  
-ul li {
-    list-style: none;
-    padding: 0 20px;
+header {
+  height: 180px;
+  background-image: linear-gradient(to right bottom, rgba(90, 30, 10, 0.6), rgba(90, 30, 10, 0.4)), url(../../../assets/Images/bg-3.jpg);
+  background-size: cover;
+  animation: clipPathDown 4s ease-out;
+  animation-fill-mode: forwards;
 }
+
+.navBar ul {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px 0 0 0;
+  justify-content: center;
+}
+
+.navBar .navLink {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  color: var(--white);
+  padding: 0 1rem;
+  text-shadow: none;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+.navBar .navLink:hover {
+  text-shadow: 3px 3px 0 rgba(210, 210, 210, 0.4);
+}
+  
+.navBar ul li {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.logo {
+  width: 100%;
+  padding: 1rem 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.logo figure {
+  width: 100px;
+}
+
+.logo figure img {
+  width: 100%;
+}
+
+@keyframes clipPathDown {
+  0% {
+    clip-path: ellipse(60% 100% at 50% 0%);
+    background-position: top; }
+  100% {
+    clip-path: ellipse(95% 100% at 50% 0%);
+    background-position: center; } 
+}
+

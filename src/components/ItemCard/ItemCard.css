@@ -2,6 +2,19 @@
 .itemCard {
     width: 100%;
 }
+.container_itemCard:last-child {
+    padding-top: 1.3rem;
+}
+.itemCard h3 {
+    font-size: 1.2rem;
+    padding: .5rem 0 0 0;
+}
+
+.itemCard p {
+    width: 80%;
+    margin: 0 auto;
+    padding: .5rem 0;
+}
 
 .qtyProd {
     width: 100%;

@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   :root {
     --color-primario: coral;
     --white: #fdfcfd;
@@ -20,6 +20,9 @@
   a {
     text-decoration: none;
   }
+  a:visited {
+    color: inherit;
+  }
   
   li {
     list-style: none;
@@ -28,4 +31,12 @@
   button {
     outline: none;
     cursor: pointer;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
   }

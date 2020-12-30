@@ -1,22 +1,20 @@
+import {useParams} from 'react-router-dom';
 import {useState, useEffect} from 'react';
+import { productList } from '../../assets/Products/products';
 import ProductDetail from './ProductDetail';
 
-const Detail = ({nombre, precio, description}) => {
+const Detail = () => {
 
-    const [product, setProduct] = useState(null)
-
-    const detalleProducto = 
-        {
-            nombre: `${nombre}`,
-            description: `${description}`,
-            precio: `${precio}`,
-        }
     
+    const [product, setProduct] = useState([])
+    
+    const {id} = useParams()
 
     const getProduct = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(detalleProducto);
-        }, 2000)
+            const detailId = productList.find( idProducto => idProducto.id === id ) 
+            resolve(detailId);
+        }, 1000)
     })
 
     const getProductDB = async () => {
@@ -32,22 +30,22 @@ const Detail = ({nombre, precio, description}) => {
         getProductDB();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
+    console.log(product)
+    
     // useEffect(() => {
     //     getProduct.then(response => setProduct(response)).catch(error => console.log(error))
     // })
-    
+
     return (
         <>
             {
                 product ?
-                <>
-                    <li>
-                        <ProductDetail item={product} />
-                    </li>
-                </>
+                    <article>
+                        <ProductDetail itemDetail={product} />
+                    </article>
                 : <p>Cargando detalle...</p>
             }
+
             <section>
                 otros productios recomendados
             </section>   

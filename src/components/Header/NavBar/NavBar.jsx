@@ -1,7 +1,10 @@
+import {Link} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import CartWidget from '../../CartWidget/CartWidget';
 import CartWidgetIcon from '../CartWidgetIcon/CartWidgetIcon';
+
 import './NavBar.css';
+import logo from '../../../assets/Images/logo.png';
 
 function NavBar() {
 
@@ -9,20 +12,20 @@ function NavBar() {
 
     const navLink = [
         {
-            category: 'Home',
-            url:'',
+            nombre: 'Home',
+            ruta:'/',
         },
         {
-            category: 'Dulces',
-            url:'',
+            nombre: 'Dulces',
+            ruta:'/category/Dulces',
         },
         {
-            category: 'Salados',
-            url:'',
+            nombre: 'Salados',
+            ruta:'/category/Salados',
         },
         {
-            category: 'Integral',
-            url:'',
+            nombre: 'Integral',
+            ruta:'/category/Integrales',
         }
     ];
 
@@ -54,19 +57,25 @@ function NavBar() {
     return (
         <>
             <header>
-                <h1>Waffle House</h1>
+                <Link to="/">
+                    <article className="logo">
+                        <figure>
+                            <img src={logo} alt="Logo Waffle House" />    
+                        </figure>
+                    </article>
+                </Link>
                 {
-                    <nav>
+                    <nav className="navBar">
                         {
                             navBar.length ?
                             <ul>
                                 {
                                     navBar.map((link,index) => (
-                                        <li key={index}>
-                                            <a href={link.url}>
-                                                {link.category}
-                                            </a>
-                                        </li>
+                                        <span className="navLink" key={index}>
+                                            <Link to={`${link.ruta}`}>
+                                                {link.nombre}
+                                            </Link>
+                                        </span>
                                     ))
                                 }
                                 <li onClick={openCartWidget}><CartWidgetIcon /></li>
