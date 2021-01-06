@@ -8,9 +8,6 @@ const ProductDetail = ({itemDetail}) => {
 
     const handleClickGoToCart = () => {
         setEvtToCart(true)
-        if(evtToCart) {
-            return <Redirect to='/cart'/>
-        }
     }
     
     return (
@@ -20,6 +17,9 @@ const ProductDetail = ({itemDetail}) => {
             <p>{itemDetail.precio}</p>
             <ItemCount />
             <button onClick={handleClickGoToCart}>Ir a comprar</button>
+            {
+                evtToCart && <Redirect to='/cart'/>
+            }
         </article>
     )
 }
