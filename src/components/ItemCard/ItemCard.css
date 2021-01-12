@@ -23,7 +23,7 @@
     padding: .5rem;
 }
 
-.qtyProd button {
+.qtyProd button.countProd {
     background: var(--color-primario);
     width: 40px;
     height: 40px;
@@ -33,7 +33,7 @@
     color: #fdfdfc;
 }
 
-.qtyProd button[disabled] {
+.qtyProd button[disabled].countProd {
     background: rgb(210, 210, 210);
 }
 

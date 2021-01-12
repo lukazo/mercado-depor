@@ -1,5 +1,5 @@
+import {useState} from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-
 import './styles/reset.css';
 import NavBar from './components/Header/NavBar/NavBar';
 import Home from './containers/Home/Home';
@@ -11,8 +11,13 @@ import {Store} from './store'
 
 function App() {
   
+  const [data, setData] = useState({
+    items: [],
+    cantidad: 0,
+  })
+
   return (
-    <Store.Provider>
+    <Store.Provider value={[data, setData]}>
       <BrowserRouter>
         <NavBar />
         <Switch>

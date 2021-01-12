@@ -5,7 +5,6 @@ import ProductDetail from './ProductDetail';
 
 const Detail = () => {
 
-    
     const [product, setProduct] = useState([])
     
     const {id} = useParams()
@@ -30,7 +29,7 @@ const Detail = () => {
         getProductDB();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    console.log(product)
+    
     
     // useEffect(() => {
     //     getProduct.then(response => setProduct(response)).catch(error => console.log(error))
@@ -44,10 +43,11 @@ const Detail = () => {
                         <ProductDetail itemDetail={product} />
                     </article>
                 : <p>Cargando detalle...</p>
+                
             }
 
             <section>
-                otros productios recomendados
+                otros productos recomendados
             </section>   
         </>
     );

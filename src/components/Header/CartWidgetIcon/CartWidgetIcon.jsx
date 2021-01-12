@@ -1,11 +1,16 @@
+import {useContext} from 'react';
 import {AiOutlineShoppingCart} from 'react-icons/ai'
-import './CartWidgetIcon.css'
+import './CartWidgetIcon.css';
+import {Store} from '../../../store/';
 
-const CartWidgetIcon = () => {
+const CartWidgetIcon = ({action}) => {
+
+    const [data, setData] = useContext(Store);
+    
     return (
-        <div className="cartWidgetIcon">
+        <div className="cartWidgetIcon" onClick={action}>
             <AiOutlineShoppingCart />
-            <span>0</span>
+            <span>{data.cantidad}</span>
         </div> 
     );
 }

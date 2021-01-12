@@ -1,6 +1,6 @@
-import ItemCount from '../../components/ItemCard/ItemCard';
 import {useState} from 'react';
 import {Redirect} from 'react-router-dom';
+import ItemCount from '../../components/ItemCard/ItemCard';
 
 const ProductDetail = ({itemDetail}) => {
 
@@ -9,13 +9,13 @@ const ProductDetail = ({itemDetail}) => {
     const handleClickGoToCart = () => {
         setEvtToCart(true)
     }
-    
+
     return (
         <article>
             <p>{itemDetail.nombre}</p>
             <p>{itemDetail.description}</p>
             <p>{itemDetail.precio}</p>
-            <ItemCount />
+            <ItemCount itemDetail={itemDetail} />
             <button onClick={handleClickGoToCart}>Ir a comprar</button>
             {
                 evtToCart && <Redirect to='/cart'/>
