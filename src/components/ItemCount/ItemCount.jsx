@@ -1,16 +1,19 @@
 import {useState, useContext} from 'react';
+//import {useHistory} from 'react-router-dom';
 import {Store} from '../../store'
 
 const ItemCount = ({itemDetail, maxProd = 15}) => {
 
+    //const history = useHistory()
     const [data, setData] = useContext(Store)
 
     const onAdd = () => {
         setData({
             ...data, 
             cantidad: data.cantidad + qtyProd,
-            items: [...data.items, itemDetail]
+            items: [...data.items,{nombre: itemDetail.nombre, precio: itemDetail.precio}]
         })
+        //history.push('/cart');
     }
     
     const [qtyProd, setQtyProd] = useState(0);

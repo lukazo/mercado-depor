@@ -4,6 +4,7 @@
     top: 0;
     height: 100vh;
     width: 500px;
+    padding-top: 3rem;
     background: #fdfcfd;
     border-left: 1px solid rgba(40,40,40,.3);
 }
@@ -37,4 +38,13 @@
 }
 .cierreCart:hover {
     color: coral;
+}
+
+.itemContainer {
+    margin: 0 .8rem;
+    padding: 1.1rem;
+    border-bottom: 1px solid rgba(40,40,40,.1);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }

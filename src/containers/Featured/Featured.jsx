@@ -54,12 +54,7 @@ const Featured = () => {
                         {
                             itemList.map((item) => (
                                 <li key={item.id} className="container_itemCard">
-                                    <ItemCard
-                                        id={item.id}
-                                        nombre={item.nombre}
-                                        description={item.description}
-                                        precio={item.precio}
-                                    />
+                                    <ItemCard itemDetail={item} />
                                 </li>
                             ))
                         }
