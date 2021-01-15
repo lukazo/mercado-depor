@@ -11,7 +11,8 @@ const ItemCount = ({itemDetail, maxProd = 15}) => {
         setData({
             ...data, 
             cantidad: data.cantidad + qtyProd,
-            items: [...data.items,{nombre: itemDetail.nombre, precio: itemDetail.precio}]
+            items: [...data.items,{nombre: itemDetail.nombre, precio: itemDetail.precio}],
+            precio: itemDetail.precio * qtyProd
         })
         //history.push('/cart');
     }

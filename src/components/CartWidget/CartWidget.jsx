@@ -6,6 +6,13 @@ import {Store} from '../../store'
 const CartWidget = ({show, action}) => {
     const [data, setData] = useContext(Store)
     
+    // const total = [data.precio].reduce((acc, valorActual) => acc + data.items.precio * data.items.cantidad, 0)
+    // console.log(total)
+
+    const eliminaProducto = (itemId) => {
+        
+    }
+    
     return (
         <>
             <article>
@@ -17,6 +24,8 @@ const CartWidget = ({show, action}) => {
                                 <article className="itemContainer">
                                     <p>{item.nombre}</p>
                                     <p>{data.cantidad}</p>
+                                    <p>{parseInt(data.precio)}</p>
+                                    <button onClick={eliminaProducto}>X</button>
                                 </article>
                             )
                         }                
