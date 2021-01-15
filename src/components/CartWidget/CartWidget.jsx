@@ -10,7 +10,7 @@ const CartWidget = ({show, action}) => {
     // console.log(total)
 
     const eliminaProducto = (itemId) => {
-        
+
     }
     
     return (
@@ -21,7 +21,7 @@ const CartWidget = ({show, action}) => {
                     <div>
                         {
                             data.items.map(item => 
-                                <article className="itemContainer">
+                                <article key={item.id} className="itemContainer">
                                     <p>{item.nombre}</p>
                                     <p>{data.cantidad}</p>
                                     <p>{parseInt(data.precio)}</p>

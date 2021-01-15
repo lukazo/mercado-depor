@@ -12,6 +12,7 @@ import {Store} from './store'
 function App() {
   
   const [data, setData] = useState({
+    id: 0,
     items: [],
     cantidad: 0,
     precio: 0,
