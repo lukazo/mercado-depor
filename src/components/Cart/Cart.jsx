@@ -7,11 +7,17 @@ const Cart = () => {
    return (
         <>
         <h1>Carrito</h1>
+        <div className="itemContainer">
+            <p>Item</p>
+            <p>Cantidad</p>
+            <p>Subtotal</p>
+        </div>
         {
-            data.items.map((item, index) => 
-                <div key={index} className='itemContainer'>
+            data.items.map((item) => 
+                <div key={item.id} className='itemContainer'>
                     <h2>{item.nombre}</h2>
-                    <h2>{item.precio}</h2>
+                    <h2>{item.qty}</h2>
+                    <h2>{data.precio}</h2>
                 </div>
             )
         }

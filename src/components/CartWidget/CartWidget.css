@@ -48,3 +48,11 @@
     flex-flow: row wrap;
     justify-content: space-between;
 }
+
+.totalContainer {
+    margin: 0 .8rem;
+    padding: 1.1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
