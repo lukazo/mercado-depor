@@ -22,6 +22,7 @@ const Featured = () => {
                 arr.push({id: doc.id, data: doc.data()})
             })
             setItemList(arr)
+            console.log(arr)
         })
         .catch(e => console.log(e))
     }
@@ -67,7 +68,13 @@ const Featured = () => {
                         {
                             itemList.map((item) => (
                                 <li key={item.id} className="container_itemCard">
-                                    <ItemCard itemDetail={item.data} />
+                                    <ItemCard 
+                                        id={item.id}
+                                        nombre={item.data.nombre}
+                                        description={item.data.description}
+                                        precio={item.data.precio}
+                                        item={item.data}
+                                    />
                                 </li>
                             ))
                         }

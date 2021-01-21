@@ -12,7 +12,7 @@ const Detail = () => {
     
 
     useEffect(() => {
-        db.collection('productos').get()
+        db.collection('productos').doc(id).get()
         .then(doc => {
             if(doc.exists) {
                 setProduct(doc.data())
@@ -21,6 +21,8 @@ const Detail = () => {
         .catch(e => console.log(e))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
+
+    
     
     // const getProduct = new Promise((resolve, reject) => {
     //     setTimeout(() => {
